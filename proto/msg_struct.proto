@@ -1,0 +1,12 @@
+option java_package = "com.owl.card.common.protobuf.struct";
+option java_outer_classname = "CardStructPkt";
+option java_multiple_files = true;
+
+// 玩家信息
+message RoleInfoData {
+	optional string name = 1;		// 姓名(可能无)
+	required int32 gold = 2;		// 金币
+	required int32 diamond = 3;		// 钻石
+	required int32 point = 4;		// 积分(卡牌碎片)
+}
+

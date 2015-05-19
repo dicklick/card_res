@@ -2,6 +2,8 @@ option java_package = "com.owl.card.common.protobuf.cs";
 option java_outer_classname = "CardGamePkt";
 option java_multiple_files = true;
 
+import "msg_struct.proto";
+
 // msgType = 10
 // 客户端 -> 服务器
 // 客户端请求登陆
@@ -15,5 +17,6 @@ message UserLoginC2S {
 // 服务器 -> 客户端
 // 客户端请求登陆返回
 message UserLoginS2C {
-	required int32 flag = 1;	 	//0:验证错误 1:登录成功
+	required int32 rt = 1;	 				// 错误码
+	optional RoleInfoData roleInfo = 2;		// 玩家信息(失败则无)
 }
