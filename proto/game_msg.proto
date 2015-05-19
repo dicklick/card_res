@@ -1,0 +1,19 @@
+option java_package = "com.owl.card.common.protobuf.cs";
+option java_outer_classname = "CardGamePkt";
+option java_multiple_files = true;
+
+// msgType = 10
+// 客户端 -> 服务器
+// 客户端请求登陆
+message UserLoginC2S {
+	required int32 accid = 1;		// 平台用户ID
+	required int32 tstamp = 2;		// 时间戳
+	required string ticket = 3;		// 验证码
+}
+
+// msgType = 11
+// 服务器 -> 客户端
+// 客户端请求登陆返回
+message UserLoginS2C {
+	required int32 flag = 1;	 	//0:验证错误 1:登录成功
+}
